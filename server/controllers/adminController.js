@@ -11,13 +11,6 @@ export const verifyPin = async (req, res) => {
         let admin = await Admin.findOne();
 
         // If no PIN has been set up yet in the database, create a default '123456'
-        if (!admin) {
-            return res.status(400).json({
-                message: "wrong pin",
-                success: false
-            })
-        }
-
         if (admin.pin === pin) {
             return res.status(200).json({ success: true, message: 'Authenticated' });
         } else {

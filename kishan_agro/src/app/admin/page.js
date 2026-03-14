@@ -16,6 +16,7 @@ export default function AdminPanel() {
         register,
         handleSubmit,
         reset,
+        setError,
         formState: {
             errors,
             isSubmitSuccessful,
@@ -63,7 +64,7 @@ export default function AdminPanel() {
 
     const fetchProducts = async () => {
         try {
-            const { data } = await axios.get('http://localhost:5000/api/products?admin=true');
+            const { data } = await axiosInstance.get('/products?admin=true');
             setProducts(data);
             setLoading(false);
         } catch (error) {
@@ -112,7 +113,7 @@ export default function AdminPanel() {
 
     const toggleAvailability = async (id, currentStatus) => {
         try {
-            await axios.put(`http://localhost:5000/api/products/${id}`, { isAvailable: !currentStatus });
+            await axiosInstance.put(`/products/${id}`, { isAvailable: !currentStatus });
             fetchProducts();
         } catch (error) {
             console.error("Error toggling status", error);
@@ -121,10 +122,14 @@ export default function AdminPanel() {
 
 
     async function authenticate(data) {
-        console.log(data)
-        const isVerified = await axiosInstance.post("/verify", data.pin)
-        if (isVerified.status === 200) {
-            setIsAuthenticated(true)
+        try {
+            const isVerified = await axiosInstance.post("/verify", data);
+            if (isVerified.status === 200) {
+                setIsAuthenticated(true);
+            }
+        } catch (error) {
+            console.error(error);
+            setError("pin", { type: "manual", message: "Incorrect code. try again." });
         }
     }
 
@@ -152,7 +157,7 @@ export default function AdminPanel() {
                                 placeholder="••••••"
                                 autoFocus
                             />
-                            {errors && <p className="text-red-500 text-sm mt-3 font-semibold">Incorrect code. try again.</p>}
+                            {errors.pin && <p className="text-red-500 text-sm mt-3 font-semibold">{errors.pin.message || "Incorrect code. try again."}</p>}
                         </div>
                         <button
                             type="submit"

@@ -8,7 +8,7 @@ export default async function Products({ initialQuery = '' }) {
 
 
     try {
-        const url = new URL('http://localhost:5000/api/products');
+        const url = new URL('https://kishan-agro-next.vercel.app/api/products');
         if (initialQuery) {
             url.searchParams.append('keyword', initialQuery);
         }

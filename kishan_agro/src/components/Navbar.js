@@ -16,7 +16,7 @@ export default function Navbar() {
 
                         <div className="flex md:hidden items-center gap-4">
                             <Link href="/" className="text-sm font-bold text-zinc-600 dark:text-zinc-300 hover:text-emerald-600 transition-colors">Home</Link>
-                            <Link href="/contact" className="text-sm font-bold text-zinc-600 dark:text-zinc-300 hover:text-emerald-600 transition-colors">Contact</Link>
+                            <Link href="tel:+919427286098" className="text-sm font-bold text-zinc-600 dark:text-zinc-300 hover:text-emerald-600 transition-colors">Contact</Link>
                         </div>
                     </div>
 

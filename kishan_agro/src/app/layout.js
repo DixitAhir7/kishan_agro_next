@@ -16,13 +16,13 @@ const geistMono = Geist_Mono({
 export const metadata = {
   metadataBase: new URL('https://kishanagro.com'),
   title: {
-    default: "Kishan Agro - Agrotech Solutions",
+    default: "Kishan Agro",
     template: "%s | Kishan Agro"
   },
-  description: "Kishan Agro offers top-tier agricultural solutions, premium seeds, and modern farming techniques to empower farmers globally.",
+  description: "Kishan Agro offers ultratech-cement and much more building matireals",
   openGraph: {
-    title: "Kishan Agro - Agrotech Solutions",
-    description: "Kishan Agro offers top-tier agricultural solutions, premium seeds, and modern farming techniques to empower farmers globally.",
+    title: "Kishan Agro",
+    description: "Kishan Agro offers ultratech-cement and much more building matireals",
     url: "https://kishanagro.com",
     siteName: "Kishan Agro",
     images: [
@@ -37,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kishan Agro - Agrotech Solutions",
-    description: "Kishan Agro offers top-tier agricultural solutions, premium seeds, and modern farming techniques.",
+    title: "Kishan Agro",
+    description: "Kishan Agro offers ultratech-cement and much more building matireals",
   },
   robots: {
     index: true,
@@ -49,7 +49,7 @@ export const metadata = {
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
-    },
+    }
   },
 };
 

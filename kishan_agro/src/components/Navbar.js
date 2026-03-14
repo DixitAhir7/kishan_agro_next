@@ -10,7 +10,7 @@ export default function Navbar() {
                         {/* Logo */}
                         <Link href="/" className="flex-shrink-0 flex items-center gap-2 group">
                             <span className="text-2xl font-black tracking-tight text-yellow-200">
-                                Kishan Agro
+                                Kishan building solutions
                             </span>
                         </Link>
 

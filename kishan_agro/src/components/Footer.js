@@ -13,7 +13,7 @@ export default function Footer() {
                     </a>
                 </div>
 
-                <div className="flex flex-col sm:flex-row items-center gap-6">
+                {/* <div className="flex flex-col sm:flex-row items-center gap-6">
                     <Link
                         href="/awards"
                         className="text-base font-semibold text-zinc-600 dark:text-zinc-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-2 group"
@@ -33,7 +33,7 @@ export default function Footer() {
                     <p className="text-sm text-zinc-500 dark:text-zinc-500">
                         &copy; {new Date().getFullYear()} Kishan Agro
                     </p>
-                </div>
+                </div> */}
             </div>
         </footer>
     );

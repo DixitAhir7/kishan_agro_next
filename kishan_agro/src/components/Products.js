@@ -1,9 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import Link from 'next/link';
+import ShopSlider from './ShopSlider';
 
 export default async function Products({ initialQuery = '' }) {
     let products = [];
+
 
     try {
         const url = new URL('http://localhost:5000/api/products');
@@ -40,7 +42,7 @@ export default async function Products({ initialQuery = '' }) {
 
                 {/* Grid Section */}
                 {products.length === 0 ? (
-                    <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16 py-12 px-6 md:px-6 shadow-sm rounded-xl border border-zinc-200 dark:border-zinc-800">
+                    <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16 py-12 px-6 md:px-6 shadow-sm rounded-2xl border border-zinc-200 dark:border-zinc-800">
                         <div className="flex-1 text-center md:text-left">
                             <div className="inline-flex items-center justify-center size-12 bg-zinc-100 dark:bg-zinc-800 rounded-full mb-6">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-zinc-400 dark:text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -55,16 +57,7 @@ export default async function Products({ initialQuery = '' }) {
                                 View Available Products
                             </Link>
                         </div>
-                        <div className="flex-1 w-full max-w-md shrink-0 relative">
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <iframe
-                                // src="https://maps.google.com/maps?q=21.124357,70.116059&z=18&output=embed"
-                                className='w-full h-auto aspect-video md:aspect-square object-cover rounded-xl shadow-sm border border-zinc-100 dark:border-zinc-800 sepia-[.3]'
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7860.1616580166265!2d70.11605946397384!3d21.12435742976467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bfd41325b730035%3A0x922a6b046e0f2537!2sKISHAN%20AGRO%20CENTRE!5e1!3m2!1sen!2sin!4v1773227641629!5m2!1sen!2sin"
-                                allowFullScreen={true}
-                                loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
+                        <ShopSlider />
                     </div>
                 ) : (
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 xl:gap-4">

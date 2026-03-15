@@ -10,16 +10,28 @@ export default function ShopSlider() {
             src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7860.1616580166265!2d70.11605946397384!3d21.12435742976467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bfd41325b730035%3A0x922a6b046e0f2537!2sKISHAN%20AGRO%20CENTRE!5e1!3m2!1sen!2sin!4v1773227641629!5m2!1sen!2sin"
         },
         {
-            type: 'image',
-            src: "https://images.unsplash.com/photo-1542038584-c89e82c5aabe?q=80&w=800&auto=format&fit=crop"
+            type: 'video',
+            src: "/WhatsApp Video 2026-03-14 at 19.51.35_2.mp4"
         },
         {
             type: 'image',
-            src: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=800&auto=format&fit=crop"
+            src: "/WhatsApp Image 2026-03-14 at 19.51.35.jpeg"
         },
         {
             type: 'image',
-            src: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop"
+            src: "/WhatsApp Image 2026-03-14 at 19.51.39.jpeg"
+        },
+        {
+            type: 'image',
+            src: "/WhatsApp Image 2026-03-14 at 19.53.05.jpeg"
+        },
+        {
+            type: 'image',
+            src: "/WhatsApp Image 2026-03-14 at 19.54.50.jpeg"
+        },
+        {
+            type: 'image',
+            src: "/WhatsApp Image 2026-03-14 at 19.53.03.jpeg"
         }
     ];
 
@@ -39,14 +51,27 @@ export default function ShopSlider() {
                     style={{ transform: `translateX(-${index * 100}%)` }}
                 >
                     {slides.map((slide, i) => (
-                        <div key={i} className="w-full shrink-0 h-full flex items-center justify-center">
-                            {slide.type === 'map' ? (
+                        <div
+                            key={i}
+                            className="w-full shrink-0 h-full flex items-center justify-center"
+                        >
+                            {slide.type === "map" ? (
                                 <iframe
                                     className="w-full h-full object-cover sepia-[.3]"
                                     src={slide.src}
-                                    allowFullScreen={true}
+                                    allowFullScreen
                                     loading="lazy"
                                     referrerPolicy="no-referrer-when-downgrade"
+                                />
+                            ) : slide.type === "video" ? (
+                                <video
+                                    className="w-full h-full object-cover sepia-[.3]"
+                                    src={slide.src}
+                                    controls
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
                                 />
                             ) : (
                                 /* eslint-disable-next-line @next/next/no-img-element */

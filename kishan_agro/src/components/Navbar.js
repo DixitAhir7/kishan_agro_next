@@ -9,13 +9,14 @@ export default function Navbar() {
                     <div className="flex justify-between items-center w-full md:w-auto">
                         {/* Logo */}
                         <Link href="/" className="flex-shrink-0 flex items-center gap-2 group">
-                            <span className="text-2xl font-black tracking-tight text-yellow-200">
+                            <span className="md:text-3xl max-sm:text-xl font-black tracking-tight text-yellow-200">
                                 Kishan building solutions
                             </span>
                         </Link>
 
                         <div className="flex md:hidden items-center gap-4">
                             <Link href="/" className="text-sm font-bold text-zinc-600 dark:text-zinc-300 hover:text-emerald-600 transition-colors">Home</Link>
+                            <Link href="/images" className="text-sm font-bold text-zinc-600 dark:text-zinc-300 hover:text-emerald-600 transition-colors">Gallery</Link>
                             <Link href="tel:+919427286098" className="text-sm font-bold text-zinc-600 dark:text-zinc-300 hover:text-emerald-600 transition-colors">Contact</Link>
                         </div>
                     </div>
@@ -41,6 +42,9 @@ export default function Navbar() {
                     <div className="hidden md:flex items-center gap-8">
                         <Link href="/" className="text-[15px] font-bold text-zinc-700 dark:text-zinc-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors hover:-translate-y-0.5 transform">
                             Home
+                        </Link>
+                        <Link href="/images" className="text-[15px] font-bold text-zinc-700 dark:text-zinc-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors hover:-translate-y-0.5 transform">
+                            Gallery
                         </Link>
                         <Link href="tel:+919427286098" className="text-[15px] font-bold text-zinc-700 dark:text-zinc-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors hover:-translate-y-0.5 transform">
                             Contact
